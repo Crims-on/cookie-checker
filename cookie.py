@@ -21,28 +21,28 @@ def parse_cookies(cookie_string):
 
 def check_cookies(cookies):
     required_cookies = {
-        "roblox.com": [".ROBLOSECURITY"],
+        "roblox.": [".ROBLOSECURITY"],
         "google.": ["SID"],
-        "paypal.com": ["login_email","x-pp-s"],
-        "steampowered.com": ["steamLoginSecure"],
-        "steamcommunity.com": ["steamLoginSecure"],
-        "geoguessr.com": ["_ncfa"],
-        "twitter.com": ["auth_token"],
-        "youtube.com": ["__Secure-3PSID"],
-        "live.com": ["__Host-MSAAUTHP","JSHP"],
-        "playvalorant.com": ["__Secure-id_hint", "__Secure-access_token"],
-        "soundcloud.com": ["oauth_token"],
+        "paypal.": ["login_email","x-pp-s"],
+        "steampowered.": ["steamLoginSecure"],
+        "steamcommunity.": ["steamLoginSecure"],
+        "geoguessr.": ["_ncfa"],
+        "twitter.": ["auth_token"],
+        "youtube.": ["__Secure-3PSID"],
+        "live.": ["__Host-MSAAUTHP","JSHP"],
+        "playvalorant.": ["__Secure-id_hint", "__Secure-access_token"],
+        "soundcloud.": ["oauth_token"],
         "amazon.": ["session-id"],
-        "disqus.com": ["disqusauth"],
-        "instagram.com": ["sessionid"],
-        "spotify.com": ["sp_adid", "sp_t"],
-        "twitch.rv": ["twilight-user"],
-        "vacban.wtf": ["userinit"],
-        "rockstargames.com": ["BearerToken"],
-        "netflix.com": ["NetflixId"],
-        "neverlose.cc": ["auth"],
-        "reddit.com": ["reddit_session"],
-        "sellix.io": ["AWSALBTG"],
+        "disqus.": ["disqusauth"],
+        "instagram.": ["sessionid"],
+        "spotify.": ["sp_adid", "sp_t"],
+        "twitch.": ["twilight-user"],
+        "vacban.": ["userinit"],
+        "rockstargames.": ["BearerToken"],
+        "netflix.": ["NetflixId"],
+        "neverlose.": ["auth"],
+        "reddit.": ["reddit_session"],
+        "sellix.": ["AWSALBTG"],
         "unknownskids.": ["xf_session","xf_user"],
         "duolingo.": ["jwt_token"],
         "leboncoin.": ["luat"],
@@ -51,13 +51,13 @@ def check_cookies(cookies):
         "earnit.": ["earnit.gg"],
         "cracked.": ["mybbuser"],
         "azure.":  ["FedAuth"],
-        "trello.com": ["token"],
-        "adobe.com": ["forterToken"],
-        "facebook.com": ["sb"],
-        "indeed.com": ["SHOE"],
-        "shien.com": ["sessionID_shein"],
-        "wish.com": ["sweeper_session"],
-        "battlelog.co": ["ips4_IPSSessionFront"],
+        "trello.": ["token"],
+        "adobe.": ["forterToken"],
+        "facebook.": ["sb"],
+        "indeed.": ["SHOE"],
+        "shien.": ["sessionID_shein"],
+        "wish.": ["sweeper_session"],
+        "battlelog.": ["ips4_IPSSessionFront"],
     }
     
     for _, cookie in cookies.items():
@@ -85,6 +85,8 @@ def send_to_cleaned(domain):
 
 # Reading the cookie from a file
 cookie_file = input("Cookie file name: ")
+if cookie_file[0] == '"':
+    cookie_file=cookie_file[1:-1]
 file_path = "\\".join(cookie_file.split("\\")[:-1])+"\\"
 
 with open(cookie_file, "r") as file:
